@@ -13,6 +13,7 @@
                  [org.clojure/core.async "0.1.338.0-5c5012-alpha"]
                  [cljs-http "0.1.16"]
                  [secretary "1.2.1"]
+                 [net.drib/strokes "0.5.1"]
                  [om "0.7.3"]]
 
   :plugins [[lein-cljsbuild "1.0.3"]
@@ -30,16 +31,16 @@
               :builds [{:id "dev"
                         :source-paths ["src/cljs"]
                         :compiler {
-                                   :output-to "resources/public/js/om_strokes.js"
-                                   :output-dir "resources/public/js/out"
+                                   :output-to "resources/public/js/gen/om_strokes.js"
+                                   :output-dir "resources/public/js/gen"
                                    :optimizations :none
                                    :source-map true
                                    :externs ["react/externs/react.js"]}}
                        {:id "release"
                         :source-paths ["src/cljs"]
                         :compiler {
-                                   :output-to "resources/public/js/om_strokes.js"
-                                   :source-map "resources/public/js/om_strokes.js.map"
+                                   :output-to "resources/public/js/gen/om_strokes.js"
+                                   :source-map "resources/public/js/gen/om_strokes.js.map"
                                    :optimizations :advanced
                                    :pretty-print false
                                    :output-wrapper false
